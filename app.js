@@ -1,6 +1,7 @@
 const restify = require("restify");
 
 respond = (req, res, next) => {
+  console.log("responding call...");
   res.send("hello " + req.params.name);
   next();
 };
