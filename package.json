@@ -1,0 +1,15 @@
+{
+  "name": "fmelo-hello",
+  "version": "1.0.0",
+  "description": "",
+  "main": "index.js",
+  "scripts": {
+    "start": "clear; nodemon app",
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "author": "Francisco Melo <fmelo7@gmail.com>",
+  "license": "ISC",
+  "dependencies": {
+    "restify": "^8.2.0"
+  }
+}

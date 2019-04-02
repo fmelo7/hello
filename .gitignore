@@ -1,0 +1,11 @@
+coverage/
+test/reports/
+node_modules/
+.nyc_output/
+.sonarlint/
+npm-debug.log
+temp/**/*.*
+logs/**/*.*
+package-lock.json
+yarn.lock
+.vscode/
