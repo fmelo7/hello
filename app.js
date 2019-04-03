@@ -5,8 +5,12 @@ const logger = require('./api/lib/logger');
 
 // iniciando servidor na porta do ambiente ou do config
 server.listen(process.env.PORT || config.app.port, () => {
-    logger.info('aplicacao esta rodando em %s', server.url);
+    logger.info('Server', `aplicacao esta rodando em ${server.url}`);
 
     // importando rotas dos modulos
     routes.importModulesRoutes();
 });
+
+server.on('close', () => logger.info('Server', 'o servidor foi finalizado'));
+
+module.exports = server;

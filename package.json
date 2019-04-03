@@ -5,7 +5,9 @@
   "main": "index.js",
   "scripts": {
     "start": "node app",
-    "test": "echo \"Error: no test specified\" && exit 1"
+    "test": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --timeout 5000",
+    "test:tdd": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --watch",
+    "integration": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.integration.js --timeout 5000"
   },
   "author": "Francisco Melo <fmelo7@gmail.com>",
   "license": "ISC",
@@ -14,9 +16,21 @@
     "restify": "^8.2.0"
   },
   "devDependencies": {
+    "chai": "^4.2.0",
     "eslint": "^5.16.0",
     "eslint-config-airbnb-base": "^13.1.0",
     "eslint-plugin-chai-friendly": "^0.4.1",
-    "eslint-plugin-import": "^2.16.0"
+    "eslint-plugin-import": "^2.16.0",
+    "mocha": "^6.0.2",
+    "pre-commit": "^1.2.2",
+    "sinon": "^7.3.1",
+    "sinon-chai": "^3.3.0",
+    "supertest": "^4.0.2"
+  },
+  "pre-commit": {
+    "run": [
+      "test",
+      "integration"
+    ]
   }
 }

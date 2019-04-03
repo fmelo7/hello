@@ -6,16 +6,22 @@ class Logger {
         this.write = (module, msg, obj) => `${config.app.name}: ${module || ''}: ${msg} ${obj ? JSON.stringify(obj) : ''}`;
     }
 
-    info(msg, obj) {
-        console.info(this.write(msg, obj));
+    info(module, msg, obj = null) {
+        if (this.config.log.debug) {
+            console.info(this.write(module, msg, obj));
+        }
     }
 
-    warn(msg, obj) {
-        console.warn(this.write(msg, obj));
+    warn(module, msg, obj = null) {
+        if (this.config.log.debug) {
+            console.warn(this.write(module, msg, obj));
+        }
     }
 
-    error(msg, obj) {
-        console.error(this.write(msg, obj));
+    error(module, msg, obj = null) {
+        if (this.config.log.debug) {
+            console.error(this.write(module, msg, obj));
+        }
     }
 }
 
