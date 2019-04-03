@@ -3,7 +3,7 @@ const config = require('./config');
 class Logger {
     constructor() {
         this.config = config;
-        this.write = (module, msg, obj) => `${config.app.name} - ${module || ''} ${msg} ${obj ? JSON.stringify(obj) : ''}`;
+        this.write = (module, msg, obj) => `${config.app.name}: ${module || ''}: ${msg} ${obj ? JSON.stringify(obj) : ''}`;
     }
 
     info(msg, obj) {
