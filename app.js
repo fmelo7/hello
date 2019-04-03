@@ -1,8 +1,10 @@
-const restify = require('restify');
-const helloController = require('./api/modules/hello/controller');
+const { server } = require('./api/config/server');
+const routes = require('./api/config/routes');
 
-const server = restify.createServer();
-server.get('/hello/:name', helloController.respond.bind(helloController));
-server.head('/hello/:name', helloController.respond.bind(helloController));
+// iniciando servidor na porta do ambiente ou 8080
+server.listen(process.env.PORT || 8080, () => {
+    console.log('aplicacao esta rodando em %s', server.url);
 
-server.listen(process.env.PORT || 8080, () => console.log('%s listening at %s', server.name, server.url));
+    // importando rotas dos modulos
+    routes.importModulesRoutes();
+});
