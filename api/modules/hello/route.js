@@ -1,5 +1,5 @@
-const { server } = require('../../config/server');
-const routes = require('../../config/routes');
+const { server } = require('../../lib/server');
+const routes = require('../../lib/routes');
 const controller = require('./controller');
 
 // full = { base: '/aplicacao', module: 'hello', full: '/aplicacao/hello' }

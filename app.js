@@ -1,5 +1,5 @@
-const { server } = require('./api/config/server');
-const routes = require('./api/config/routes');
+const { server } = require('./api/lib/server');
+const routes = require('./api/lib/routes');
 
 // iniciando servidor na porta do ambiente ou 8080
 server.listen(process.env.PORT || 8080, () => {
