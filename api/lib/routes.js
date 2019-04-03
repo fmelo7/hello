@@ -1,9 +1,13 @@
 const glob = require('glob');
 const path = require('path');
+const Loggable = require('./loggable');
 
-class Routes {
+class Routes extends Loggable {
     constructor() {
-        this.module = 'Routes';
+        super({
+            module: 'Routes'
+        });
+
         this.glob = glob;
         this.path = path;
     }
@@ -13,7 +17,7 @@ class Routes {
      */
     importModulesRoutes() {
         this.glob.sync('api/modules/*/route.js').forEach((file) => {
-            console.log(`Importando rotas de [${file}]`);
+            this.log.info(`Importando rotas de [${file}]`);
             require(this.path.resolve(file));
         });
     }
