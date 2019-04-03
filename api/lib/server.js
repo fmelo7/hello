@@ -10,5 +10,5 @@ const server = new Server();
 
 module.exports = {
     restify: server.restify,
-    server: server.restify.createServer()
+    srv: server.restify.createServer()
 };

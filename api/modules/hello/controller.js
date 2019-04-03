@@ -1,4 +1,4 @@
-const Loggable = require('../../lib/loggable');
+const { Loggable } = require('../../lib');
 
 class HelloController extends Loggable {
     constructor() {

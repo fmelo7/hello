@@ -1,7 +1,7 @@
 const supertest = require('supertest');
 const { expect } = require('chai');
+const { config } = require('../../../../lib');
 const server = require('../../../../../app');
-const config = require('../../../../lib/config');
 
 describe('Module Hello', () => {
     before(() => {
