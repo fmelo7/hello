@@ -8,7 +8,7 @@ class HelloController extends Loggable {
     }
 
     respond(req, res, next) {
-        this.log.info(`${this.module}: responding call ${req.params.name}`);
+        this.log.info(`responding call ${req.params.name}`);
         res.send(`hello ${req.params.name}`);
         next();
     }
