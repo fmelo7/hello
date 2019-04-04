@@ -4,5 +4,9 @@
     "baseRoute": "/hello",
     "port": 8080
   },
-  "log": { "debug": true }
+  "log": { "debug": true },
+  "cotacaoDolarService": {
+    "url": "https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)",
+    "timeout": 12000
+  }
 }
