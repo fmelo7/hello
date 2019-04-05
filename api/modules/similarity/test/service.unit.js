@@ -1,8 +1,8 @@
 const { expect } = require('chai');
-const { config } = require('../../../../lib');
-const service = require('../../service/service');
+const { config } = require('../../../lib');
+const service = require('../service/service');
 
-describe.only('Similarity', () => {
+describe('Similarity', () => {
     before(() => {
         config.log.debug = false;
     });

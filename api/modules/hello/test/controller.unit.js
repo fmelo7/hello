@@ -1,7 +1,7 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-const { config } = require('../../../../lib');
-const controller = require('../../controller');
+const { config } = require('../../../lib');
+const controller = require('../controller');
 
 describe(controller.module, () => {
     before(() => {

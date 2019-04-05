@@ -9,17 +9,15 @@ class SimilarityController extends Loggable {
     }
 
     respond(req, res, next) {
-        this.log.info('responding call');
-
         let data = {};
 
         if (req.method === 'POST') {
-            // res.send(`hello ${JSON.stringify(req.body)}`);
             data = req.body;
         } else {
-            // res.send(`hello ${JSON.stringify(req.params)}`);
             data = req.params;
         }
+
+        this.log.info(`responding call ${JSON.stringify(data)}`);
 
         const s1 = service.soundex(data.text1);
         const s2 = service.soundex(data.text2);
@@ -28,7 +26,8 @@ class SimilarityController extends Loggable {
         res.send({
             data,
             soundex: {
-                s1, s2
+                s1,
+                s2
             },
             levenDist: {
                 sim

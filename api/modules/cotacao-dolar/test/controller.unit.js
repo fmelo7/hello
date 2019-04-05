@@ -1,9 +1,9 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-const { config } = require('../../../../lib');
-const controller = require('../../controller');
+const { config } = require('../../../lib');
+const controller = require('../controller');
 
-describe(controller.module, () => {
+describe.skip(controller.module, () => {
     before(() => {
         config.log.debug = false;
     });
@@ -20,21 +20,19 @@ describe(controller.module, () => {
             done();
         });
 
-        it('deve retornar some hello name ao chamar respond', (done) => {
-            const req = {
-                params: {
-                    name: 'some-name'
-                }
-            };
+        it('deve retornar a cotacao dolar do dia ao chamar respond', (done) => {
+            const req = {};
 
             const res = {
                 send: (response) => {
-                    expect(response).to.be.eq('hello some-name');
+                    expect(response.cotacaoCompra).to.be.ok;
+                    expect(response.cotacaoVenda).to.be.ok;
+                    expect(response.dataHoraCotacao).to.be.ok;
                     done();
                 }
             };
 
-            controller.respond(req, res, sinon.spy());
+            controller.respond(req, res, sinon.spy);
         });
     });
 });

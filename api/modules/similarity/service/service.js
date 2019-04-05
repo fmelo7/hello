@@ -58,9 +58,8 @@ class Similarity {
             n: 5,
             r: 6
         };
-        r =
-            f +
-            a
+        r = f
+            + a
                 .map(v => codes[v])
                 .filter((v, i) => (i === 0 ? v !== codes[f] : v !== a[i - 1]))
                 .join('');
