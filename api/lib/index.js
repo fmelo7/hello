@@ -4,6 +4,7 @@ const logger = require('./logger');
 const routes = require('./routes');
 const server = require('./server');
 const Rest = require('./rest');
+const Database = require('./database');
 
 module.exports = {
     config,
@@ -11,5 +12,6 @@ module.exports = {
     logger,
     routes,
     server,
-    Rest
+    Rest,
+    Database
 };
