@@ -1,14 +1,14 @@
 const fetch = require('node-fetch');
-const Loggable = require('../lib/loggable');
+const Service = require('../lib/service');
 
-class Rest extends Loggable {
+class Rest extends Service {
     constructor({ module, config }) {
         super({
-            module
+            module,
+            config
         });
 
         this.fetch = fetch;
-        this.config = config;
     }
 
     post(url, body) {
