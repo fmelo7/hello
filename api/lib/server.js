@@ -11,7 +11,7 @@ class Server {
 
     configure() {
         this.server = this.restify.createServer({
-            log: this.logger
+            log: this.logger,
         });
 
         this.server.use(this.restify.plugins.gzipResponse());

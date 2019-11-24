@@ -1,18 +1,16 @@
 const supertest = require('supertest');
 const { expect } = require('chai');
-const { config } = require('../../../lib');
+const { config, TestHelper } = require('../../../lib');
 const server = require('../../../../app');
 
-describe.skip('Module Hello', () => {
-    before(() => {
-        config.log.debug = false;
-    });
+describe('Module Hello', () => {
+    before(() => TestHelper.before(config));
 
-    after(() => server.close());
+    after(() => TestHelper.after(server));
 
-    beforeEach((done) => setTimeout(done, 500));
+    // beforeEach((done) => setTimeout(done, 500));
 
-    afterEach((done) => setTimeout(done, 500));
+    // afterEach((done) => setTimeout(done, 500));
 
     it('deve retornar hello name', (done) => {
         supertest(server)

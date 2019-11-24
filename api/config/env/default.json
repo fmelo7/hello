@@ -4,7 +4,9 @@
     "baseRoute": "/hello",
     "port": 8080
   },
-  "log": { "debug": true },
+  "log": {
+    "enabled": true
+  },
   "db": {
     "url": "mongodb://localhost:27017/hello",
     "options": {

@@ -8,7 +8,10 @@ describe.skip('Module Similarity', () => {
         config.log.debug = false;
     });
 
-    after(() => server.close());
+    after(() => {
+        console.log('closing server');
+        server.close();
+    });
 
     beforeEach((done) => setTimeout(done, 500));
 

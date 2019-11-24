@@ -1,14 +1,10 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-const { config } = require('../../../lib');
+const { config, TestHelper } = require('../../../lib');
 const controller = require('../controller');
 
 describe(controller.module, () => {
-    before(() => {
-        config.log.debug = false;
-    });
-
-    after(() => {});
+    before(() => TestHelper.before(config));
 
     afterEach(() => sinon.restore());
 
@@ -21,15 +17,15 @@ describe(controller.module, () => {
         it('deve retornar some hello name ao chamar respond', (done) => {
             const req = {
                 params: {
-                    name: 'some-name'
-                }
+                    name: 'some-name',
+                },
             };
 
             const res = {
                 send: (response) => {
                     expect(response).to.be.eq('hello some-name');
                     done();
-                }
+                },
             };
 
             controller.respond(req, res, sinon.spy());

@@ -7,19 +7,19 @@ class Logger {
     }
 
     info(module, msg, obj = null) {
-        if (this.config.log.debug) {
+        if (this.config.log.enabled) {
             console.info(this.write(module, msg, obj));
         }
     }
 
     warn(module, msg, obj = null) {
-        if (this.config.log.debug) {
+        if (this.config.log.enabled) {
             console.warn(this.write(module, msg, obj));
         }
     }
 
     error(module, msg, obj = null) {
-        if (this.config.log.debug) {
+        if (this.config.log.enabled) {
             console.error(this.write(module, msg, obj));
         }
     }

@@ -13,19 +13,6 @@ server.listen(process.env.PORT || config.app.port, () => {
     routes.importModulesRoutes();
 });
 
-server.on('close', () => logger.info('Server', 'o servidor foi finalizado'));
-
-// finaliza a conexão com o banco sempre que o restify for finalizado
-server.on('close', () => {
-    logger.info('Aplicação', 'O Servidor do restify foi finalizado.');
-    database.connection.close();
-});
-
-// finalizar o restify no stop da aplicação
-process.on('SIGINT', () => {
-    server.close();
-});
-
 // configurando rota de health check
 server.get('/healthcheck', (req, res, next) => {
     res.send(`${config.app.name} está rodando.`);
@@ -36,6 +23,15 @@ server.get('/healthcheck', (req, res, next) => {
 server.get('/', (req, res, next) => {
     res.send(`${config.app.name} está rodando.`);
     next();
+});
+
+// finalizar o restify no stop da aplicação
+process.on('SIGINT', () => server.close());
+
+// finaliza a conexão com o banco sempre que o restify for finalizado
+server.on('close', () => {
+    logger.info('Aplicação', 'O Servidor do restify foi finalizado.');
+    database.connection.close();
 });
 
 module.exports = server;
