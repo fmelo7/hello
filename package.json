@@ -6,6 +6,7 @@
     "scripts": {
         "start": "node app",
         "test": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --timeout 5000",
+        "test:cov": "NODE_ENV=testing nyc --reporter=html --reporter=lcov --reporter=text-lcov --reporter=text --report-dir=test/reports ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --timeout 5000",
         "test:tdd": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --watch",
         "integration": "echo integration",
         "integrationOriginal": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.integration.js --timeout 5000"
@@ -26,6 +27,7 @@
         "eslint-config-prettier": "^6.7.0",
         "eslint-plugin-prettier": "^3.1.1",
         "mocha": "^6.2.2",
+        "nyc": "^14.1.1",
         "pre-commit": "^1.2.2",
         "prettier": "^1.19.1",
         "prettier-eslint": "^9.0.1",

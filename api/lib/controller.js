@@ -1,12 +1,10 @@
-const Loggable = require('./loggable');
+const Service = require('./service');
 
-class Controller extends Loggable {
-    constructor({ module, config }) {
+class Controller extends Service {
+    constructor({ module }) {
         super({
-            module
+            module,
         });
-
-        this.config = config || {};
     }
 }
 
