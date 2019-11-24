@@ -4,7 +4,7 @@ const { config, TestHelper } = require('../../../lib');
 const controller = require('../controller');
 
 describe(controller.module, () => {
-    before(() => TestHelper.before(config));
+    before(() => (config ? (config.log.enabled = false) : null));
 
     afterEach(() => sinon.restore());
 

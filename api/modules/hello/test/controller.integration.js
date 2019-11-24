@@ -4,9 +4,9 @@ const { config, TestHelper } = require('../../../lib');
 const server = require('../../../../app');
 
 describe('Module Hello', () => {
-    before(() => TestHelper.before(config));
+    before(() => (config ? (config.log.enabled = false) : null));
 
-    after(() => TestHelper.after(server));
+    after(() => server.close());
 
     // beforeEach((done) => setTimeout(done, 500));
 

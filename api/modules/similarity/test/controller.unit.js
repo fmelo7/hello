@@ -4,15 +4,9 @@ const { config } = require('../../../lib');
 const controller = require('../controller');
 
 describe(controller.module, () => {
-    before(() => {
-        config.log.debug = false;
-    });
+    before(() => (config ? (config.log.enabled = false) : null));
 
-    after(() => {});
-
-    afterEach(() => {
-        sinon.restore();
-    });
+    afterEach(() => sinon.restore());
 
     describe('respond', () => {
         it('deve conter o metodo respond', (done) => {
@@ -24,8 +18,8 @@ describe(controller.module, () => {
             const req = {
                 params: {
                     text1: 'some-name',
-                    text2: 'some-name'
-                }
+                    text2: 'some-name',
+                },
             };
 
             const res = {
@@ -34,7 +28,7 @@ describe(controller.module, () => {
                     expect(response.soundex).to.be.ok;
                     expect(response.levenDist).to.be.ok;
                     done();
-                }
+                },
             };
 
             controller.respond(req, res, sinon.spy());

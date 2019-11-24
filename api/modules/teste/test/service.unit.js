@@ -4,15 +4,9 @@ const { config } = require('../../../lib');
 const service = require('../service');
 
 describe(service.module, () => {
-    before(() => {
-        config.log.debug = false;
-    });
+    before(() => (config ? (config.log.enabled = false) : null));
 
-    after(() => {});
-
-    afterEach(() => {
-        sinon.restore();
-    });
+    afterEach(() => sinon.restore());
 
     describe('calculate', () => {
         it('should return something', (done) => {
