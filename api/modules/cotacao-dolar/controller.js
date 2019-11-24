@@ -1,7 +1,7 @@
-const { Loggable } = require('../../lib');
+const { Controller } = require('../../lib');
 const service = require('./service/service');
 
-class CotacaoDolarController extends Loggable {
+class CotacaoDolarController extends Controller {
     constructor() {
         super({
             module: 'CotacaoDolarController'
@@ -12,7 +12,10 @@ class CotacaoDolarController extends Loggable {
 
     respond(req, res, next) {
         this.log.info('responding call');
-        this.service.cotacaoDolar().then(response => res.send(response));
+        this.service
+            .cotacaoDolar()
+            .then((response) => res.send(response))
+            .catch((err) => this.log.error(err));
         next();
     }
 }

@@ -10,9 +10,7 @@ describe(controller.module, () => {
 
     after(() => {});
 
-    afterEach(() => {
-        sinon.restore();
-    });
+    afterEach(() => sinon.restore());
 
     describe('respond', () => {
         it('deve conter o metodo respond', (done) => {

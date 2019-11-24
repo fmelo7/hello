@@ -1,6 +1,6 @@
-const { Loggable } = require('../../lib');
+const { Controller } = require('../../lib');
 
-class HelloController extends Loggable {
+class HelloController extends Controller {
     constructor() {
         super({
             module: 'HelloController'

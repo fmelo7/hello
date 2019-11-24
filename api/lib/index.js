@@ -1,19 +1,19 @@
 const config = require('./config');
-const Loggable = require('./loggable');
-const logger = require('./logger');
 const routes = require('./routes');
 const server = require('./server');
-const Rest = require('./rest');
-const Service = require('./service');
+const logger = require('./logger');
 const Database = require('./database');
+const Controller = require('./controller');
+const Service = require('./service');
+const Rest = require('./rest');
 
 module.exports = {
     config,
-    Loggable,
-    logger,
     routes,
     server,
-    Rest,
+    logger,
+    Database,
+    Controller,
     Service,
-    Database
+    Rest
 };

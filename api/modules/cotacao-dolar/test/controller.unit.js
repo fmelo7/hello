@@ -3,16 +3,14 @@ const { expect } = require('chai');
 const { config } = require('../../../lib');
 const controller = require('../controller');
 
-describe.skip(controller.module, () => {
+describe(controller.module, () => {
     before(() => {
         config.log.debug = false;
     });
 
     after(() => {});
 
-    afterEach(() => {
-        sinon.restore();
-    });
+    afterEach(() => sinon.restore());
 
     describe('respond', () => {
         it('deve conter o metodo respond', (done) => {
@@ -21,13 +19,15 @@ describe.skip(controller.module, () => {
         });
 
         it('deve retornar a cotacao dolar do dia ao chamar respond', (done) => {
+            sinon.stub(controller.service, 'cotacaoDolar').resolves({
+                data: 123
+            });
+
             const req = {};
 
             const res = {
                 send: (response) => {
-                    expect(response.cotacaoCompra).to.be.ok;
-                    expect(response.cotacaoVenda).to.be.ok;
-                    expect(response.dataHoraCotacao).to.be.ok;
+                    expect(response).to.be.ok;
                     done();
                 }
             };

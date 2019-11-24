@@ -19,16 +19,14 @@ class CotacaoDolarService extends Rest {
 
         // https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao='04-05-2019'&$top=100&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao
 
-        // const url = `${this.config.url}?@dataCotacao='${data}'&$top=100&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`;
+        const url = `${this.config.url}?@dataCotacao='${data}'&$top=100&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao`;
 
         // const url = 'https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%2703-22-2019%27&$top=100&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao';
 
-        // return this.get(url).then((response) => {
-        //     console.log(response);
-
-        //     if (response.value) return response.value[0];
-        //     return response;
-        // });
+        return this.get(url).then((response) => {
+            if (response.value) return response.value[0];
+            return response;
+        });
     }
 }
 

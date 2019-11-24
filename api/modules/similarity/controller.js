@@ -1,7 +1,7 @@
-const { Loggable } = require('../../lib');
+const { Controller } = require('../../lib');
 const service = require('./service/service');
 
-class SimilarityController extends Loggable {
+class SimilarityController extends Controller {
     constructor() {
         super({
             module: 'SimilarityController'
@@ -21,7 +21,9 @@ class SimilarityController extends Loggable {
 
         const s1 = service.soundex(data.text1);
         const s2 = service.soundex(data.text2);
-        const sim = Math.floor(service.levenshteinDistance(data.text1, data.text2) * 100);
+        const sim = Math.floor(
+            service.levenshteinDistance(data.text1, data.text2) * 100
+        );
 
         res.send({
             data,

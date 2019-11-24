@@ -1,4 +1,4 @@
-const { server, config, routes, Database, logger } = require('./api/lib');
+const { server, config, routes, logger, Database } = require('./api/lib');
 
 let database;
 

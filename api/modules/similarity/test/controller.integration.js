@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const { config } = require('../../../lib');
 const server = require('../../../../app');
 
-describe('Module Similarity', () => {
+describe.skip('Module Similarity', () => {
     before(() => {
         config.log.debug = false;
     });
