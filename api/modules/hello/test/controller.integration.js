@@ -10,13 +10,9 @@ describe.skip('Module Hello', () => {
 
     after(() => server.close());
 
-    beforeEach((done) => {
-        setTimeout(done, 500);
-    });
+    beforeEach((done) => setTimeout(done, 500));
 
-    afterEach((done) => {
-        setTimeout(done, 500);
-    });
+    afterEach((done) => setTimeout(done, 500));
 
     it('deve retornar hello name', (done) => {
         supertest(server)

@@ -7,7 +7,8 @@
         "start": "node app",
         "test": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --timeout 5000",
         "test:tdd": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --watch",
-        "integration": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.integration.js --timeout 5000"
+        "integration": "echo integration",
+        "integrationOriginal": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.integration.js --timeout 5000"
     },
     "author": "Francisco Melo <fmelo7@gmail.com>",
     "license": "ISC",

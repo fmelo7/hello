@@ -8,17 +8,11 @@ describe.skip('Module Cotacao Dolar', () => {
         config.log.debug = false;
     });
 
-    after(() => {
-        server.close();
-    });
+    after(() => server.close());
 
-    beforeEach((done) => {
-        setTimeout(done, 500);
-    });
+    beforeEach((done) => setTimeout(done, 500));
 
-    afterEach((done) => {
-        setTimeout(done, 500);
-    });
+    afterEach((done) => setTimeout(done, 500));
 
     it('deve retornar a cotacao do dolar', (done) => {
         supertest(server)
