@@ -3,14 +3,12 @@ const { expect } = require('chai');
 const { config } = require('../../../lib');
 const server = require('../../../../app');
 
-describe.skip('Module Similarity', () => {
-    before(() => (config ? (config.log.enabled = false) : null));
+describe.skip('Similarity', () => {
+    before(() => {
+        config.log.enabled = false;
+    });
 
     after(() => server.close());
-
-    // beforeEach((done) => setTimeout(done, 500));
-
-    // afterEach((done) => setTimeout(done, 500));
 
     it('deve retornar similaridade', (done) => {
         supertest(server)

@@ -1,10 +1,12 @@
 const sinon = require('sinon');
 const { expect } = require('chai');
-const { config, TestHelper } = require('../../../lib');
+const { config } = require('../../../lib');
 const controller = require('../controller');
 
 describe(controller.module, () => {
-    before(() => (config ? (config.log.enabled = false) : null));
+    before(() => {
+        config.log.enabled = false;
+    });
 
     afterEach(() => sinon.restore());
 

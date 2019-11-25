@@ -4,7 +4,9 @@ const { config } = require('../../../lib');
 const service = require('../service');
 
 describe(service.module, () => {
-    before(() => (config ? (config.log.enabled = false) : null));
+    before(() => {
+        config.log.enabled = false;
+    });
 
     afterEach(() => sinon.restore());
 

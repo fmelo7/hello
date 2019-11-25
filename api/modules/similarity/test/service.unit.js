@@ -2,12 +2,10 @@ const { expect } = require('chai');
 const { config } = require('../../../lib');
 const service = require('../service/service');
 
-describe('Similarity', () => {
+describe(service.module(), () => {
     before(() => {
         config.log.debug = false;
     });
-
-    after(() => {});
 
     const tests = {
         '': '',
@@ -20,7 +18,7 @@ describe('Similarity', () => {
 
     const precision = 60;
 
-    describe('Similarity - Soundex', () => {
+    describe(`${service.module()} - Soundex`, () => {
         it('Deve possuir método soundex', (done) => {
             expect(service).to.have.property('soundex');
             done();
@@ -38,7 +36,7 @@ describe('Similarity', () => {
         });
     });
 
-    describe('Similarity - Levenshtein Distance', () => {
+    describe(`${service.module()} - Levenshtein Distance`, () => {
         it('Deve possuir método levenshteinDistance', (done) => {
             expect(service).to.have.property('levenshteinDistance');
             done();
@@ -55,7 +53,7 @@ describe('Similarity', () => {
         });
     });
 
-    describe('Similarity - combinado Soundex e Levenshtein Distance', () => {
+    describe(`${service.module()} - combinado Soundex e Levenshtein Distance`, () => {
         Object.keys(tests).forEach((k, i) => {
             Object.keys(tests).forEach((l, j) => {
                 const s1 = service.soundex(k);

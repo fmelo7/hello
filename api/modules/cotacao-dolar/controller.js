@@ -14,8 +14,7 @@ class CotacaoDolarController extends Controller {
         this.log.info('responding call');
         this.service
             .cotacaoDolar()
-            .then((response) => res.send(response))
-            .catch((err) => this.log.error(err));
+            .then(response => res.send(response));
         next();
     }
 }

@@ -1,4 +1,6 @@
 class Similarity {
+    static module() { return 'SimilarityService'; }
+
     static levenshteinDistance(s1, s2) {
         const longer = s1.length > s2.length ? s1 : s2;
         const shorter = s1.length > s2.length ? s2 : s1;

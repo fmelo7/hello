@@ -3,14 +3,12 @@ const { expect } = require('chai');
 const { config } = require('../../../lib');
 const server = require('../../../../app');
 
-describe.skip('Module Cotacao Dolar', () => {
-    before(() => (config ? (config.log.enabled = false) : null));
+describe.skip('Cotacao Dolar', () => {
+    before(() => {
+        config.log.enabled = false;
+    });
 
     after(() => server.close());
-
-    // beforeEach((done) => setTimeout(done, 500));
-
-    // afterEach((done) => setTimeout(done, 500));
 
     it('deve retornar a cotacao do dolar', (done) => {
         supertest(server)

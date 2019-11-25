@@ -5,10 +5,8 @@ const controller = require('../controller');
 
 describe(controller.module, () => {
     before(() => {
-        config.log.debug = false;
+        config.log.enabled = false;
     });
-
-    after(() => {});
 
     afterEach(() => sinon.restore());
 
@@ -18,7 +16,7 @@ describe(controller.module, () => {
             done();
         });
 
-        it('deve retornar a cotacao dolar do dia ao chamar respond', (done) => {
+        it('deve retornar ok ao chamar respond', (done) => {
             sinon.stub(controller.service, 'cotacaoDolar').resolves({
                 data: 123
             });
