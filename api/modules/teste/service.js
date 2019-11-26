@@ -11,7 +11,6 @@ class TesteService extends Service {
         this.log.info(`calculateting something...${[keys, clicks]}`);
 
         // calculate
-        // eslint-disable-next-line no-param-reassign
         return this.calculateClicks(keys, keys, clicks, 0);
     }
 

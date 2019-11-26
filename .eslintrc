@@ -1,17 +1,15 @@
 {
     "extends": "airbnb-base",
     "env": {
-        "browser": true, 
-        "node": true, 
-        "mocha": true 
+        "browser": true,
+        "node": true,
+        "mocha": true
     },
-    "plugins": [
-        "chai-friendly"
-    ],
+    "plugins": ["chai-friendly"],
     "rules": {
         "no-unused-expressions": 0,
         "chai-friendly/no-unused-expressions": 2,
-        "no-console": "off",
+        "no-console": "error",
         "indent": [
             "error",
             4,
@@ -31,15 +29,14 @@
                 }
             }
         ],
-        "max-len": [
-            "error",
-            140
-        ],
+        "max-len": ["error", 140],
         "import/no-extraneous-dependencies": [
             "error",
             {
                 "devDependencies": true
             }
-        ]
+        ],
+        "linebreak-style": 0,
+        "global-require": 0
     }
 }
