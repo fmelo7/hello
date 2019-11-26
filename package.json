@@ -40,7 +40,6 @@
     },
     "pre-commit": {
         "run": [
-            "test:cov",
             "test",
             "integration"
         ]
