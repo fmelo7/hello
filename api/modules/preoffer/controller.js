@@ -1,5 +1,5 @@
 const { Controller } = require('../../lib');
-const { service } = require('./service/service');
+const service = require('./service/service');
 
 class PreOfferController extends Controller {
     constructor() {

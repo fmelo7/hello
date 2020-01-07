@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const { config } = require('../../../lib');
 const server = require('../../../../app');
 
-describe.skip('PreOffer', () => {
+describe('PreOffer', () => {
     before(() => {
         config.log.enabled = false;
     });

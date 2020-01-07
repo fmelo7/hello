@@ -3,7 +3,7 @@ const { expect } = require('chai');
 const { config } = require('../../../lib');
 const controller = require('../controller');
 
-describe.skip(controller.module, () => {
+describe(controller.module, () => {
     before(() => {
         config.log.enabled = false;
     });
