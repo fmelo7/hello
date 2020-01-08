@@ -6,6 +6,7 @@ const Database = require('./database');
 const Controller = require('./controller');
 const Service = require('./service');
 const Rest = require('./rest');
+const Repository = require('./repository');
 
 module.exports = {
     config,
@@ -16,4 +17,5 @@ module.exports = {
     Controller,
     Service,
     Rest,
+    Repository,
 };

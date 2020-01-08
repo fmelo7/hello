@@ -11,7 +11,7 @@ class PreOfferController extends Controller {
 
     register(req, res, next) {
         this.log.info(`responding call ${req.body.msisdnList}`);
-        // TODO chheck is param is empty: bad request
+        // TODO check is param is empty: bad request
         res.send(this.service.register(req.body.msisdnList));
         next();
     }
