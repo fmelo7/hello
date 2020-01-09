@@ -13,10 +13,6 @@ class PreOfferService extends Service {
     register(msisdnList) {
         this.log.info(`register: ${msisdnList}`);
 
-        const result = this.repository.findOne({
-            msisdn: 123,
-        });
-
         return `msisdnList: ${msisdnList}`;
     }
 }

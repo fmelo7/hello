@@ -7,7 +7,7 @@ const PreOfferSchema = new Schema(
         msisdn: {
             type: Number,
             trim: true,
-            required: 'Please fill in title',
+            required: true,
         },
     },
     {
@@ -15,10 +15,7 @@ const PreOfferSchema = new Schema(
     },
 );
 
-// Add full-text search index
-PreOfferSchema.index({
-    // "$**": "text"
-    msisdn: 1,
-});
+// TODO
+// db.PreOffers.createIndex({msisdn: 1},{unique: true});
 
 module.exports = mongoose.model('PreOffer', PreOfferSchema);

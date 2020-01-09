@@ -8,6 +8,10 @@ class PreOfferRepository extends Repository {
             model,
         });
     }
+
+    findOne(query) {
+        return this.model.findOne(query).exec();
+    }
 }
 
 module.exports = new PreOfferRepository();

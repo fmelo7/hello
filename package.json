@@ -4,7 +4,7 @@
     "description": "",
     "main": "index.js",
     "scripts": {
-        "start": "node app",
+        "start": "nodemon app",
         "test": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --timeout 5000",
         "test:cov": "NODE_ENV=testing nyc --reporter=html --reporter=lcov --reporter=text-lcov --reporter=text --report-dir=test/reports ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --timeout 5000",
         "test:tdd": "NODE_ENV=testing ./node_modules/mocha/bin/mocha ./api/modules/**/*.unit.js --watch",
@@ -30,6 +30,7 @@
         "eslint-plugin-prettier": "^3.1.1",
         "jshint": "^2.10.3",
         "mocha": "^6.2.2",
+        "nodemon": "^2.0.2",
         "nyc": "^14.1.1",
         "pre-commit": "^1.2.2",
         "prettier": "^1.19.1",
