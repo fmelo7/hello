@@ -4,7 +4,7 @@ const service = require('./service/service');
 class CotacaoDolarController extends Controller {
     constructor() {
         super({
-            module: 'CotacaoDolarController'
+            module: 'CotacaoDolarController',
         });
 
         this.service = service;
@@ -12,9 +12,7 @@ class CotacaoDolarController extends Controller {
 
     respond(req, res, next) {
         this.log.info('responding call');
-        this.service
-            .cotacaoDolar()
-            .then(response => res.send(response));
+        this.service.cotacaoDolar().then(response => res.send(response));
         next();
     }
 }

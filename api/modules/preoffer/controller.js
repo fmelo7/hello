@@ -10,9 +10,12 @@ class PreOfferController extends Controller {
     }
 
     register(req, res, next) {
-        this.log.info(`responding call ${req.body.msisdnList}`);
-        // TODO check is param is empty: bad request
-        res.send(this.service.register(req.body.msisdnList));
+        this.log.info(`DEBUG----------> ${!req.body && !req.body.msisdn}`);
+        if (!req.body && !req.body.msisdn) {
+            next(400);
+        }
+        this.log.info(`responding call ${req.params.msisdn || req.body.msisdn}`);
+        res.send(this.service.register(req.params.msisdn));
         next();
     }
 }

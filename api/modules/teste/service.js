@@ -3,7 +3,7 @@ const { Service } = require('../../lib');
 class TesteService extends Service {
     constructor() {
         super({
-            module: 'TesteService'
+            module: 'TesteService',
         });
     }
 

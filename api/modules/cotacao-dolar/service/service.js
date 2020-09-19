@@ -5,12 +5,12 @@ class CotacaoDolarService extends Rest {
     constructor() {
         super({
             module: 'CotacaoDolarService',
-            config: config.cotacaoDolarService
+            config: config.cotacaoDolarService,
         });
     }
 
     cotacaoDolar() {
-        const data = moment().format('MM-DD-YYYY');
+        const data = moment().add(-1, 'days').format('MM-DD-YYYY');
         this.log.info(`iniciando cotacao do dolar do dia ${data}`);
 
         // https://olinda.bcb.gov.br/olinda/servico/PTAX/versao/v1/odata/CotacaoDolarDia(dataCotacao=@dataCotacao)?@dataCotacao=%2703-22-2019%27&$top=100&$format=json&$select=cotacaoCompra,cotacaoVenda,dataHoraCotacao

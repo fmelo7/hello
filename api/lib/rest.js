@@ -5,7 +5,7 @@ class Rest extends Service {
     constructor({ module, config }) {
         super({
             module,
-            config
+            config,
         });
 
         this.fetch = fetch;
@@ -19,7 +19,7 @@ class Rest extends Service {
         options.timeout = this.config.timeout;
         options.body = body;
 
-        return this.fetch(url, options).then(this.responseHandler);
+        return this.fetch(url, options).then(response => this.responseHandler(response));
     }
 
     get(url) {

@@ -15,6 +15,7 @@
     "license": "ISC",
     "dependencies": {
         "glob": "^7.1.6",
+        "lodash": "^4.17.20",
         "moment": "^2.24.0",
         "mongoose": "^5.7.12",
         "node-fetch": "^2.6.0",
@@ -34,7 +35,7 @@
         "nyc": "^14.1.1",
         "pre-commit": "^1.2.2",
         "prettier": "^1.19.1",
-        "prettier-eslint": "^9.0.1",
+        "prettier-eslint": "^11.0.0",
         "sinon": "^7.5.0",
         "sinon-chai": "^3.3.0",
         "supertest": "^4.0.2"

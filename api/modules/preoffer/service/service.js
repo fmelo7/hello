@@ -10,10 +10,10 @@ class PreOfferService extends Service {
         this.repository = repository;
     }
 
-    register(msisdnList) {
-        this.log.info(`register: ${msisdnList}`);
+    register(msisdn) {
+        this.log.info(`register: ${msisdn}`);
 
-        return `msisdnList: ${msisdnList}`;
+        return `msisdn: ${msisdn}`;
     }
 }
 
